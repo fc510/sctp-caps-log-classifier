@@ -2,7 +2,8 @@
 
 ### Log Classifier with RandomForestClassifier
 
-[SCTP Capstone Log Classifier (nbviewer.org)](https://nbviewer.org/github/fc510/sctp-caps-log-classifier/blob/main/sctp_ml_log_data_RandomForestClassifier.ipynb)
+[SCTP Capstone Log Classifier (nbviewer.org)](https://nbviewer.org/github/fc510/sctp-caps-log-classifier/blob/405bd61e91733c6a9bb275d60044d1ecc9f1cf95/sctp_ml_log_data_RandomForestClassifier.ipynb)
+
 
 Collect 2 types of logs from [data source](https://log-sharing.dreamhosters.com/), namely system `messages` and httpd (web) `access_log` logs. They are combined and labeled **system_messages** and **httpd_access_log** respectively.
 
