@@ -1,0 +1,7 @@
+pandas
+numpy
+#jupyterlab
+contractions
+Unidecode
+#nltk
+gradio
