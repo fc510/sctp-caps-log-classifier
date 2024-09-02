@@ -5,3 +5,4 @@ contractions
 Unidecode
 #nltk
 gradio
+chardet
