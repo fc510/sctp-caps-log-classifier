@@ -1,3 +1,11 @@
+*.tgz
+*.csv
+messages*
+access_log*
+var/
+var/*
+*.sav
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
