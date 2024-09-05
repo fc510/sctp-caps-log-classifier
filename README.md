@@ -12,7 +12,7 @@ Various log data types are available at `https://log-sharing.dreamhosters.com`.
 
 For the purpose of this project, 2 log types are selected; they are linux system `messages` and apache httpd `access_log` logs. They are selected due to their distinct different nature and purpose. 
 
-They are combined and labeled **system_messages** and **httpd_access_log** respectively.
+They are combined and labeled **system_messages** and **httpd_access_log** respectively. The combined dataset has over 60,000 log entries.
 
 General overview of tasks:
 - clean (eg removing non-ascii characters)
@@ -30,7 +30,12 @@ Other tasks:
 - adjust/mine dataset for more features
 
 ### Insights
+### Observations & Lesson Learnt
+- Though log data is predominantly textual, unexpected non-ascii characters is only discovered when the full log file is loaed
+- 
 
-### Lesson Learnt
 
 ### Potential Enhancements
+
+Connect with Me at [Linkedin](https://sg.linkedin.com) 
+
