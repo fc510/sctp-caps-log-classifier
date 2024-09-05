@@ -14,6 +14,15 @@ For the purpose of this project, 2 log types are selected; they are linux system
 
 They are combined and labeled **system_messages** and **httpd_access_log** respectively. The combined dataset has over 60,000 log entries.
 
+Steps:
+1. Get Data
+2. clean Data
+3. Pre-Process Data
+4. Feature Extraction
+5. Exploratory Data Analysis & Feature Extraction
+6. Model Training/Testing & Evaluation
+7. Model Deployment
+
 General overview of tasks:
 - clean (eg removing non-ascii characters)
 - normalize date and time feature into it's components
@@ -34,8 +43,15 @@ Other tasks:
 - Though log data is predominantly textual, unexpected non-ascii characters is only discovered when the full log file is loaed
 - 
 
+### What I have learned
 
-### Potential Enhancements
+### What could have done better
+Given the opportunities, I would certainly attempt to
+- increase the dataset size
+- shuffle the dataset before using it to train the model
+- 
 
+
+***
 Connect with Me at [Linkedin](https://sg.linkedin.com) 
 
