@@ -1,13 +1,18 @@
-# SCTP Capstone Project
+# SCTP Assoc AI/ML Developer Capstone Project
 
-![Classifier Confusion Matrix](images/confusion_matrix.png)
+![Classifier Confusion Matrix](assets/confusion_matrix.png)
 
+---
 ### Log Classifier with RandomForestClassifier
+The jupyter notebook [SCTP Capstone Log Classifier (nbviewer.org)](https://nbviewer.org/github/fc510/sctp-caps-log-classifier/blob/main/sctp_ml_log_data_RandomForestClassifier.ipynb)
 
-[SCTP Capstone Log Classifier (nbviewer.org)](https://nbviewer.org/github/fc510/sctp-caps-log-classifier/blob/main/sctp_ml_log_data_RandomForestClassifier.ipynb)
+***
+### Dataset
+Various log data types are available at `https://log-sharing.dreamhosters.com`.
 
+For the purpose of this project, 2 log types are selected; they are linux system `messages` and apache httpd `access_log` logs. They are selected due to their distinct different nature and purpose. 
 
-Collect 2 types of logs from [data source](https://log-sharing.dreamhosters.com/), namely system `messages` and httpd (web) `access_log` logs. They are combined and labeled **system_messages** and **httpd_access_log** respectively.
+They are combined and labeled **system_messages** and **httpd_access_log** respectively.
 
 General overview of tasks:
 - clean (eg removing non-ascii characters)
