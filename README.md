@@ -29,11 +29,12 @@ The raw logs exists in multiple copies (due to log rotation), they are first con
 
 ### Lesson Learnt
 
-- understanding the dataset's characteristics, helps to formulate a initial set of hyperparameters for model training
+- understanding the dataset's characteristics, helps to formulate a initial set of hyperparameters for model training and to avoid issues like environment crashing
 
 ### Going forward...
 
-- can introduce XGBoost for comparison of performance
+- try XGBoost for comparison of performance
+- improve the dataset's representation of the different log type
 - design a deep learning solution to automatically classify different log types at scale
 - perhaps create a new feature to rate the "severity" of the log
 
