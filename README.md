@@ -1,4 +1,4 @@
-# Capstone on Log Classification using Supvervised Machine Learning
+# Capstone: Log Classification using Supvervised Machine Learning
 
 |          Accuracy: 1.0 |           |        |          |         |
 | ---------------------: | :-------: | :----: | :------: | ------: |
