@@ -1,57 +1,44 @@
-# SCTP Assoc AI/ML Developer Capstone Project
+# Capstone on Log Classification using Supvervised Machine Learning
 
 ![Classifier Confusion Matrix](assets/confusion_matrix.png)
 
 ---
-### Log Classifier with RandomForestClassifier
-The jupyter notebook [SCTP Capstone Log Classifier (nbviewer.org)](https://nbviewer.org/github/fc510/sctp-caps-log-classifier/blob/main/sctp_ml_log_data_RandomForestClassifier.ipynb)
+### Notebook
+The jupyter notebook [Capstone on Log Classifier (nbviewer.org)](https://nbviewer.org/github/fc510/sctp-caps-log-classifier/blob/main/sctp_ml_log_data_RandomForestClassifier.ipynb)
 
 ***
 ### Dataset
-Various log data types are available at `https://log-sharing.dreamhosters.com`.
+Raw logs are obtained from `https://log-sharing.dreamhosters.com`, where linux system `messages` log and apache httpd web `access_log` logs were selected for this project. They are selected due to their distinction in their content purpose and by far some of most common log data available.
 
-For the purpose of this project, 2 log types are selected; they are linux system `messages` and apache httpd `access_log` logs. They are selected due to their distinct different nature and purpose. 
+The raw logs exists in multiple copies (due to log rotation), they are first consolidated respectively, cleaned, pre-processed and thereafter labeled and combined into a single dataset (csv). This resulted in a dataset of over 60k log entries available.
 
-They are combined and labeled **system_messages** and **httpd_access_log** respectively. The combined dataset has over 60,000 log entries.
+***
+### Observations
 
-Steps:
-1. Get Data
-2. clean Data
-3. Pre-Process Data
-4. Feature Extraction
-5. Exploratory Data Analysis & Feature Extraction
-6. Model Training/Testing & Evaluation
-7. Model Deployment
-
-General overview of tasks:
-- clean (eg removing non-ascii characters)
-- normalize date and time feature into it's components
-- pre-process the log data (`content` column)
-- vectorized
-- divide dataset into train-test-split
-- train model
-- evaluate model performance
-- deploy model for inference (gradio)
-
-Other tasks:
-- hyperparameter tuning of baseline model
-- compare with another classifier (eg Support Vector Machine)
-- adjust/mine dataset for more features
+- The dataset is imbalanced between the `messages` and `access_log` logs in a 2:3 proportion
+- In general log length average about 200 words, but there instances where log can be as long as over 8000 words
+- Due to the nature of log data, it isn't exactly a natural language and using NLP cleaning technique may not be ideal since some info within log data are inherent cryptic
+- Nonetheless, the RandomForestClassifier proves sufficiently capable to identify the log type
+- The model perform well during training & testing achieving 100% accuracy, whereas during sampled inference test accuracy only managed over 70%
 
 ### Insights
-### Observations & Lesson Learnt
-- Though log data is predominantly textual, unexpected non-ascii characters is only discovered when the full log file is loaed
-- 
 
-### What I have learned
+- For each log type, having more labeled data containing more variety in log structure would certainly improve the model's performance
+- However, the above is only achievable with well prepared log data for training, which is a huge endeavour in itself
+- RandomForestClassifier (aka decision tree model) is intrinsic interpretable, and hence the explainability thru visualization is straightforward
 
-### What could have done better
-Given the opportunities, I would certainly attempt to
-- increase the dataset size
-- shuffle the dataset before using it to train the model
-- 
+### Lesson Learnt
+
+- understanding the dataset's characteristics, helps to formulate a initial set of hyperparameters for model training
+
+### Going forward...
+
+- can introduce XGBoost for comparison of performance
+- design a deep learning solution to automatically classify different log types at scale
+- perhaps create a new feature to rate the "severity" of the log
 
 
 ***
-Connect with Me at [Linkedin](https://sg.linkedin.com) 
+Connect with me [LinkedIn](https://www.linkedin.com/in/franklinchui/) 
+
 
