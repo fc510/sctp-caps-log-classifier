@@ -1,8 +1,11 @@
 pandas
 numpy
-#jupyterlab
+icecream
 contractions
 Unidecode
-#nltk
-gradio
 chardet
+gradio
+seaborn
+scikit-learn
+graphviz
+pydotplus
