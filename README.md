@@ -15,9 +15,9 @@
 
 ---
 ### Notebook
-To view the notebook, open the following link in separate tab/window.
-
-The jupyter notebook [Capstone on Log Classification (nbviewer.org)](https://nbviewer.org/github/fc510/sctp-caps-log-classifier/blob/main/sctp_ml_log_data_RandomForestClassifier.ipynb)
+Open jupyter notebook in:
+- [nbviewer.org](https://nbviewer.org/github/fc510/sctp-caps-log-classifier/blob/main/sctp_ml_log_data_RandomForestClassifier.ipynb)
+- [Colab](https://colab.research.google.com/github/fc510/sctp-caps-log-classifier/blob/main/sctp_ml_log_data_RandomForestClassifier.ipynb)
 
 ***
 ### Data
