@@ -1,5 +1,8 @@
 # Capstone: Log Classification using Supvervised Machine Learning
 
+Overall, the following depicts the training/testing results
+
+
 |          Accuracy: 1.0 |           |        |          |         |
 |-----------------------:|:---------:|:------:|:--------:|--------:|
 | Classification Report: | precision | recall | f1-score | support |
@@ -21,7 +24,7 @@ Open jupyter notebook in:
 
 ***
 ### Data
-Raw logs are obtained from `https://log-sharing.dreamhosters.com` as a tarball. Within which, the linux system `messages` log and apache httpd web `access_log` logs were selected for this project as they some of the most common logs available. 
+Raw logs are obtained from `https://log-sharing.dreamhosters.com` (Bundle 1) as a tarball. Within which, the linux system `messages` log and apache httpd web `access_log` logs were selected for this project as they some of the most common logs available. 
 
 The original tarball `hnet-hon-var-log-02282006.tgz` is is over 100MB and is not provided in this repository. Only the selected log types are retained and packaged as-is here as `raw_logs.tgz` in their original form.
 
@@ -44,7 +47,8 @@ As a sample, the `dataset.csv` generated during `Prepare Data` phase is provided
 - In general log length average about 150 words, as compared to some extreme of over 8000 words
 - Due to the nature of log data, it isn't exactly a natural language and using NLP cleaning technique may not be ideal since some info within log data are inherently cryptic or "unnatural"
 - Nonetheless, the RandomForestClassifier proves sufficiently capable to identify the log type
-- The model perform well during training & testing achieving 100% accuracy, whereas during sampled inference test accuracy only managed over 70%
+- Overall, the model perform well during training & testing, achieving 100% accuracy and a F1-score of 1.0
+- At the end of the project, a **small** sample of "unseen" logs were used to test the model, the accuracy however drops to 76% (as shown in the notebook)
 
 ### Insights
 
@@ -62,9 +66,9 @@ On the hindsight, I think
 
 ### Going forward...
 
-- for comparison, XGBoost is a good candidate
-- have more diverse sources of log data and expoentially increase the quantity
-- explore deep learning techniques to automate adapting new log type more efficiently
+- For comparison, XGBoost is a good candidate to try out
+- Have more diverse sources of log data and expoentially increase the quantity
+- Explore deep learning techniques to automate adapting new log type more efficiently
 
 
 ***
