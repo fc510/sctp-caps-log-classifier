@@ -1,5 +1,3 @@
-*.tgz
-*.csv
 messages*
 access_log*
 var/
