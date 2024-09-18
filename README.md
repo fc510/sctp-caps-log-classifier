@@ -23,16 +23,18 @@ Open jupyter notebook in:
 ### Data
 Raw logs are obtained from `https://log-sharing.dreamhosters.com` as a tarball. Within which, the linux system `messages` log and apache httpd web `access_log` logs were selected for this project as they some of the most common logs available. 
 
-The original tarball `hnet-hon-var-log-02282006.tgz` is is over 100MB and is not provide in this repository. Only the select system and web logs are retained and packaged as-is here as `raw_logs.tgz`.
+The original tarball `hnet-hon-var-log-02282006.tgz` is is over 100MB and is not provided in this repository. Only the selected log types are retained and packaged as-is here as `raw_logs.tgz` in their original form.
 
-As a sample, the `dataset.csv` is provided where all the log data are consolidated just before EDA happens.
+As a sample, the `dataset.csv` generated during `Prepare Data` phase is provided.
+
+#### Artifacts
 
 | Artifacts                                     | Description                        |
 |:----------------------------------------------|:-----------------------------------|
-| raw_logs.tgz                                  | pre-selected system and web logs   |
-| dataset.csv                                   | sample combined dataset            |
+| raw_logs.tgz                                  | Selected system and web logs       |
+| dataset.csv                                   | Sample dataset                     |
 | sctp_caps_log_classifier.pptx                 | Capstone Project Presentation deck |
-| sctp_ml_log_data_RandomForestClassifier.ipynb | jupyter notebook                   |
+| sctp_ml_log_data_RandomForestClassifier.ipynb | Jupyter notebook                   |
 
 
 ***
@@ -40,27 +42,29 @@ As a sample, the `dataset.csv` is provided where all the log data are consolidat
 
 - The dataset is imbalanced; the `messages` and `access_log` logs in a 2:3 proportion
 - In general log length average about 150 words, as compared to some extreme of over 8000 words
-- Due to the nature of log data, it isn't exactly a natural language and using NLP cleaning technique may not be ideal since some info within log data are inherent cryptic or "unnatural"
+- Due to the nature of log data, it isn't exactly a natural language and using NLP cleaning technique may not be ideal since some info within log data are inherently cryptic or "unnatural"
 - Nonetheless, the RandomForestClassifier proves sufficiently capable to identify the log type
 - The model perform well during training & testing achieving 100% accuracy, whereas during sampled inference test accuracy only managed over 70%
 
 ### Insights
 
 - For each log type, having more log data and from more diverse sources certainly improve the model's performance
-- However, 1 inherent constrain of this machine learning workflow design; there is a need create custom logic when new log type is introduced
-- RandomForestClassifier (aka decision tree model) is intrinsically interpretable, and hence the explainability thru visualization is straightforward
-- the machine learning model training is an iterative process, the workflow evolves with each repitition and improvement made
+- However, there is a need to create custom logic whenever a new log type is introduced, making the system design inflexible and probably unsustainable
+- RandomForestClassifier (aka decision tree model) is intrinsically interpretable, making explainability much apparent
+- the machine learning model training is an iterative process, the workflow evolves with each repitition and improvement made while troubleshooting issues 
 
 ### Lesson Learnt
 
-- a more robust strategy is required to manage the data source to enable an efficient pipeline
-- understanding the dataset's characteristics, helps to formulate a initial set of hyperparameters for model training and to avoid issues like environment crashing
+On the hindsight, I think
+- A more robust strategy is needed to create a better workflow/pipeline to easily adapt to different data source at scale
+- Though understanding the dataset's characteristics is crucial, but given this is the first individual exercise, I lack the domain experience and knowledge to do better
+- However, time spent in troubleshooting issues like the "environment keep crashing", and sifting through more documentations, indirectly leads to some fruitful learning 
 
 ### Going forward...
 
 - for comparison, XGBoost is a good candidate
 - have more diverse sources of log data and expoentially increase the quantity
-- explore deep learning techniqes to scale data ingestion capabilities
+- explore deep learning techniques to automate adapting new log type more efficiently
 
 
 ***
