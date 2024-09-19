@@ -9,3 +9,4 @@ seaborn
 scikit-learn
 graphviz
 pydotplus
+skops
