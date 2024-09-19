@@ -71,10 +71,6 @@ To enhance the current approach, several steps are planned for future iterations
 - **Data Expansion**: Incorporate log data from a wider range of sources to exponentially increase the dataset's diversity.
 - **Automation with Deep Learning**: Explore deep learning techniques to automate the adaptation of the model to new log types, thereby improving scalability and efficiency.
 
----
-
-This version conveys professionalism and highlights the insights gained and the future trajectory of the project.
-
 
 ***
 Connect with me [LinkedIn](https://www.linkedin.com/in/franklinchui/) 
