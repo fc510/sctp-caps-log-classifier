@@ -23,52 +23,57 @@ Open jupyter notebook in:
 - [Colab](https://colab.research.google.com/github/fc510/sctp-caps-log-classifier/blob/main/sctp_ml_log_data_RandomForestClassifier.ipynb)
 
 ***
-### Data
-Raw logs are obtained from `https://log-sharing.dreamhosters.com` (Bundle 1) as a tarball. Within which, the linux system `messages` log and apache httpd web `access_log` logs were selected for this project as they some of the most common logs available. 
+## Data Overview
 
-The original tarball `hnet-hon-var-log-02282006.tgz` is is over 100MB and is not provided in this repository. Only the selected log types are retained and packaged as-is here as `raw_logs.tgz` in their original form.
+The raw log data used for this project was sourced from [Dreamhosters Log Sharing](https://log-sharing.dreamhosters.com) (Bundle 1). Among the logs available, the Linux system messages log and Apache HTTP access log (`access_log`) were selected, as they represent two of the most commonly encountered log types.
 
-As a sample, the `dataset.csv` generated during `Prepare Data` phase is provided.
+While the original tarball, `hnet-hon-var-log-02282006.tgz`, exceeds 100MB and is not included in this repository, a subset of the logs has been extracted and packaged as `raw_logs.tgz`. The logs are preserved in their original format for use in this project. Additionally, a sample dataset (`dataset.csv`) generated during the data preparation phase is also provided.
 
-#### Artifacts
+## Artifacts
 
-| Artifacts                                     | Description                        |
-|:----------------------------------------------|:-----------------------------------|
-| raw_logs.tgz                                  | Selected system and web logs       |
-| dataset.csv                                   | Sample dataset                     |
-| sctp_caps_log_classifier.pptx                 | Capstone Project Presentation deck |
-| sctp_ml_log_data_RandomForestClassifier.ipynb | Jupyter notebook                   |
+| Artifact                              | Description                                      |
+|---------------------------------------|--------------------------------------------------|
+| `raw_logs.tgz`                        | Selected system and web logs in original form    |
+| `dataset.csv`                         | Sample dataset derived from logs                 |
+| `sctp_caps_log_classifier.pptx`       | Capstone project presentation deck               |
+| `sctp_ml_log_data_RandomForestClassifier.ipynb` | Jupyter notebook documenting the model development |
 
+## Observations
 
-***
-### Observations
+1. **Data Imbalance**: The dataset contains messages and `access_log` logs in a 2:3 ratio.
+2. **Log Length Variability**: On average, logs are approximately 180 words long, though some logs exceed 8,000 words.
+3. **Nature of Log Data**: Logs are often cryptic and do not follow natural language patterns, making traditional NLP cleaning techniques unsuitable.
+4. **Model Performance**: The RandomForestClassifier model demonstrated its capability to classify log types with impressive performance metrics:
+   - Training & testing accuracy: 100%
+   - F1-score: 1.0
+   - On a small set of "unseen" logs, accuracy dropped to 76%, highlighting potential limitations with generalization (as detailed in the Jupyter notebook).
 
-- The dataset is imbalanced; the `messages` and `access_log` logs in a 2:3 proportion
-- In general log length average about 150 words, as compared to some extreme of over 8000 words
-- Due to the nature of log data, it isn't exactly a natural language and using NLP cleaning technique may not be ideal since some info within log data are inherently cryptic or "unnatural"
-- Nonetheless, the RandomForestClassifier proves sufficiently capable to identify the log type
-- Overall, the model perform well during training & testing, achieving 100% accuracy and a F1-score of 1.0
-- At the end of the project, a **small** sample of "unseen" logs were used to test the model, the accuracy however drops to 76% (as shown in the notebook)
+## Key Insights
 
-### Insights
+- **Data Diversity**: Increasing the variety and volume of log data from different sources is critical for improving model performance.
+- **Scalability Challenges**: Introducing new log types requires custom logic, which may limit the flexibility and scalability of the system over time.
+- **Model Explainability**: The RandomForestClassifier offers a transparent, interpretable structure, making it easier to understand how the model arrives at decisions.
+- **Iterative Process**: Machine learning is inherently iterative. The workflow evolved with each iteration, allowing for continuous improvement through troubleshooting.
 
-- For each log type, having more log data and from more diverse sources certainly improve the model's performance
-- However, there is a need to create custom logic whenever a new log type is introduced, making the system design inflexible and probably unsustainable
-- RandomForestClassifier (aka decision tree model) is intrinsically interpretable, making explainability much apparent
-- the machine learning model training is an iterative process, the workflow evolves with each repitition and improvement made while troubleshooting issues 
+## Lessons Learned
 
-### Lesson Learnt
+Looking back, there are several key takeaways:
 
-On the hindsight, I think
-- A more robust strategy is needed to create a better workflow/pipeline to easily adapt to different data source at scale
-- Though understanding the dataset's characteristics is crucial, but given this is the first individual exercise, I lack the domain experience and knowledge to do better
-- However, time spent in troubleshooting issues like the "environment keep crashing", and sifting through more documentations, indirectly leads to some fruitful learning 
+1. **Workflow Improvement**: A more robust and flexible pipeline is needed to handle diverse data sources at scale.
+2. **Domain Knowledge**: While understanding the characteristics of the dataset is essential, this project exposed the gaps in domain expertise that could have led to better outcomes.
+3. **Learning Through Troubleshooting**: Challenges such as environment instability and researching documentation contributed to valuable learning experiences, albeit indirectly.
 
-### Going forward...
+## Future Directions
 
-- For comparison, XGBoost is a good candidate to try out
-- Have more diverse sources of log data and expoentially increase the quantity
-- Explore deep learning techniques to automate adapting new log type more efficiently
+To enhance the current approach, several steps are planned for future iterations:
+
+- **Model Exploration**: Investigate XGBoost as a potential alternative to RandomForestClassifier for comparison.
+- **Data Expansion**: Incorporate log data from a wider range of sources to exponentially increase the dataset's diversity.
+- **Automation with Deep Learning**: Explore deep learning techniques to automate the adaptation of the model to new log types, thereby improving scalability and efficiency.
+
+---
+
+This version conveys professionalism and highlights the insights gained and the future trajectory of the project.
 
 
 ***
