@@ -67,6 +67,7 @@ Looking back, there are several key takeaways:
 
 To enhance the current approach, several steps are planned for future iterations:
 
+- **Dimensionality Reduction**: Explore introducing PCA achieve an optimum TfidfVectorize size
 - **Model Exploration**: Investigate XGBoost as a potential alternative to RandomForestClassifier for comparison.
 - **Data Expansion**: Incorporate log data from a wider range of sources to exponentially increase the dataset's diversity.
 - **Automation with Deep Learning**: Explore deep learning techniques to automate the adaptation of the model to new log types, thereby improving scalability and efficiency.
